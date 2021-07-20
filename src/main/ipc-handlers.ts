@@ -109,6 +109,7 @@ export const initializeIpcHandlers = (): void => {
 					}
 				}
 			} else if (desktop_platform === 'linux') {
+				game_platform.available = true;
 				shell.openPath('steam://rungameid/945360');
 			}
 		}
