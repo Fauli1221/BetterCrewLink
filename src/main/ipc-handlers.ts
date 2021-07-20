@@ -96,7 +96,7 @@ export const initializeIpcHandlers = (): void => {
 					// Search for 'Innersloth.Among Us....' key and grab it
 					const key_found = enumerateKeys(game_platform.registryKey, game_platform.registrySubKey).find(
 						(reg_key) => reg_key.startsWith(game_platform.registryFindKey as string));
-					
+
 					if (key_found) {
 						// Grab the game path from the above key
 						const value_found = enumerateValues(game_platform.registryKey, game_platform.registrySubKey + '\\' + key_found).find(
@@ -112,6 +112,7 @@ export const initializeIpcHandlers = (): void => {
 				// TODO: Platform checking on Linux
 				// Set 'game_platform.available' true and setup data if platform is available, do nothing otherwise
 				game_platform.available = true;
+				game_platform.run = 'steam://rungameid/945360';
 			}
 		}
 		return DefaultGamePlatforms;
