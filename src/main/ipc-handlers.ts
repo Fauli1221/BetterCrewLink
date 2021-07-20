@@ -113,7 +113,8 @@ export const initializeIpcHandlers = (): void => {
 				// Set 'game_platform.available' true and setup data if platform is available, do nothing otherwise
 				if (game_platform.key === GamePlatform.STEAM) {
 					game_platform.available = true;
-					game_platform.run = game_platform.key = GamePlatform.STEAM;
+					game_platform.run = 'steam://rungameid/945360';
+					game_platform.launchType = PlatformRunType.URI;
 				}
 				game_platform.available = true;
 			}
