@@ -111,8 +111,11 @@ export const initializeIpcHandlers = (): void => {
 			} else if (desktop_platform === 'linux') {
 				// TODO: Platform checking on Linux
 				// Set 'game_platform.available' true and setup data if platform is available, do nothing otherwise
+				if (game_platform.key === GamePlatform.STEAM) {
+					game_platform.available = true;
+					game_platform.run = game_platform.key = GamePlatform.STEAM;
+				}
 				game_platform.available = true;
-				game_platform.run = 'steam://rungameid/945360';
 			}
 		}
 		return DefaultGamePlatforms;
