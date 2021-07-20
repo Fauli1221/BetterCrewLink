@@ -111,7 +111,7 @@ export const initializeIpcHandlers = (): void => {
 			} else if (desktop_platform === 'linux') {
 				// TODO: Platform checking on Linux
 				// Set 'game_platform.available' true and setup data if platform is available, do nothing otherwise
-				continue;
+				game_platform.available = true;
 			}
 		}
 		return DefaultGamePlatforms;
